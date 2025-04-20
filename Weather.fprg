@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Weather"/>
+        <attribute name="authors" value="HP"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-31 02:05:08 PM"/>
+        <attribute name="created" value="SFA7REVTS1RPUC0wNFJKNlFMOzIwMjUtMDMtMzE7MDE6NDU6MjQgUE07MjQ3OA=="/>
+        <attribute name="edited" value="SFA7REVTS1RPUC0wNFJKNlFMOzIwMjUtMDMtMzE7MDI6MDU6MDggUE07MjsyNTg2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="HighestTemp" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the highest temperature in degree celsius&quot;" newline="True"/>
+            <input variable="HighestTemp"/>
+            <declare name="LowestTemp" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the lowest temperature in degree celsius&quot;" newline="True"/>
+            <input variable="LowestTemp"/>
+            <declare name="AvgTemp" type="Integer" array="False" size=""/>
+            <assign variable="AvgTemp" expression="(HighestTemp+LowestTemp/2)"/>
+            <output expression="&quot;The avg temp in degree celsius&quot;" newline="True"/>
+            <output expression="AvgTemp" newline="True"/>
+            <declare name="Fahrenheit" type="Integer" array="False" size=""/>
+            <assign variable="Fahrenheit" expression="(AvgTemp*1.8)+32"/>
+            <output expression="&quot;Temperature in fahrenheit&quot;" newline="True"/>
+            <output expression="Fahrenheit" newline="True"/>
+            <if expression="AvgTemp&gt;-50 or AvgTemp&lt;50">
+                <then>
+                    <output expression="&quot;Weather condition&quot;" newline="True"/>
+                    <if expression="AvgTemp&lt;= 10">
+                        <then>
+                            <output expression="&quot;Stable&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="AvgTemp &gt; 10 or AvgTemp &lt; 20">
+                                <then>
+                                    <output expression="&quot;moderate&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Volatile&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Invalid Temp&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

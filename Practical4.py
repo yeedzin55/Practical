@@ -13,7 +13,7 @@ def count_lines(content):
 num_lines = count_lines(content)
 print(f"Number of lines: {num_lines}")
 
-def count_words(content):3
+def count_words(content):
      return len(content.split())
 
 #  Test the function
